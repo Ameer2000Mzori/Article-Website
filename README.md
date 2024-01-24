@@ -18,7 +18,7 @@
 
 # 📖 About This Project <a name="about-project"></a>
 
-> Navigation-Nation is a website crafted using HTML, CSS, and JavaScript, with the added benefit of linters to address any errors in the code, and it's built with Webpack as its primary focus. This project leverages advanced CSS and JavaScript coding techniques. Feel free to explore the demo link.
+> MyArticle-Website is a site with frontend, backend using Express.js, MongoDB, and npm packages. It includes API creation, port handling, storage management, and supports backend/frontend connections, along with CRUD operations. Download and test the project.
 
 # Sample Of Website <a name="Sample-Of-Website"></a>
 
@@ -34,12 +34,10 @@
   <ul>
   <li><a href="https://en.wikipedia.org/wiki/HTML">Html</a></li>
   <li><a href="https://en.wikipedia.org/wiki/CSS">Css</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Sass_(style_sheet_language)">Scss</a></li>
   <li><a href="https://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/TypeScript">TypeScript</a></li>
-  <li><a href="https://stylelint.io/">Html/CSS Linters</a></li>
-  <li><a href="https://eslint.org/">Html/TsLinters</a></li>
-    <li><a href="https://webpack.js.org/">Web Pack</a></li>
+  <li><a href="https://react.dev/">React.js</a></li>
+  <li><a href="https://expressjs.com/">Expressjs</a></li>
+  <li><a href="https://www.mongodb.com/">Mongodb</a></li>
   </ul>
 </details>
 
@@ -51,8 +49,13 @@
 - **[Flex & Grid]**
 - **[CSS ]**
 - **[JavaScript ]**
-- **[Linters ]**
-- **[Tslint ]**
+- **[react.js ]**
+- **[mongodb ]**
+- **[express.js ]**
+- **[postman ]**
+- **[api ]**
+- **[morgan ]**
+- **[nodemon ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
