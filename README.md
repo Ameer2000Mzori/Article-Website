@@ -18,7 +18,7 @@
 
 # 📖 About This Project <a name="about-project"></a>
 
-> MyArticle-Website is a site with frontend, backend using Express.js, MongoDB, and npm packages. It includes API creation, port handling, storage management, and supports backend/frontend connections, along with CRUD operations. Download and test the project.
+> Article-Website is a site with frontend, backend using Express.js, MongoDB, and npm packages. It includes API creation, port handling, storage management, and supports backend/frontend connections, along with CRUD operations. Download and test the project.
 
 # Sample Of Website <a name="Sample-Of-Website"></a>
 
