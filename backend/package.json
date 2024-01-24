@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node src/app.js"
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "init": "^0.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }
