@@ -10,7 +10,11 @@ app.use(router)
 
 // routes HOME PAGE
 router.get('/', (req, res) => {
-  res.send('THIS IS HOME PAGE artical website')
+  res.send('THIS IS HOME PAGE ')
+})
+
+router.get('/article', (req, res) => {
+  res.send('THIS IS   articles ')
 })
 
 // server setup
