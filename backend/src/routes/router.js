@@ -4,14 +4,17 @@ import {
   homePage,
   ArticlesPage,
   createArticle,
+  removeArticle,
 } from '../controllers/controller.js'
 
 const router = express.Router()
 
 router.get('/', homePage)
 
-router.get('/articles', ArticlesPage)
+router.get('/Articles', ArticlesPage)
 
-router.post('/articles/create', createArticle)
+router.post('/Article/create', createArticle)
+
+router.delete('/Article/remove', removeArticle)
 
 export default router

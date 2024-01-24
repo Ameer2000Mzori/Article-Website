@@ -18,7 +18,7 @@ const articlesData = [
 ]
 
 export const homePage = (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World! Articles')
 }
 
 export const ArticlesPage = (req, res) => {
@@ -37,4 +37,8 @@ export const createArticle = (req, res) => {
   articlesData.push(newArticle)
   console.log('our new article:', newArticle)
   console.log('our  articles:', articlesData)
+}
+
+export const removeArticle = (req, res) => {
+  res.send('Hello World!')
 }
