@@ -1,16 +1,17 @@
 // importing
 import express from 'express'
-import 'dotenv'
+import 'dotenv/config'
 
 // starting and creating running and using data
+const PORT = process.env.PORT || 3000
 const app = express()
-const PORT = process.env.PORT || 4000
 
-// ports
+// routes
 app.get('/', (req, res) => {
   res.send('THIS IS HOME PAGE')
 })
 
+// server setup
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
+  console.log(`server started on port ${PORT}`)
 })
