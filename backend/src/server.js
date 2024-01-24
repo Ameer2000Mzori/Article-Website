@@ -1,23 +1,17 @@
 // importing
 import express from 'express'
 import 'dotenv/config'
+import router from './routes/router.js'
 
 // starting and creating running and using data
-const PORT = process.env.PORT || 3000
-const router = express.Router()
+
 const app = express()
+app.use(express.json())
 app.use(router)
 
-// routes HOME PAGE
-router.get('/', (req, res) => {
-  res.send('THIS IS HOME PAGE ')
-})
-
-router.get('/article', (req, res) => {
-  res.send('THIS IS   articles ')
-})
+const PORT = process.env.PORT || 3000
 
 // server setup
 app.listen(PORT, () => {
-  console.log(`server started on port ${PORT}`)
+  console.log(`Server started on port ${PORT}`)
 })
