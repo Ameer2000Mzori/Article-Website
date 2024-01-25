@@ -1,24 +1,5 @@
 import { article } from '../models/articles.js'
 
-// let articlesData = [
-//   {
-//     user: 'ameer',
-//     title: 'there was a man...',
-//     story:
-//       'there was a man called ameer, he wanted to become a full stack developer',
-//   },
-//   {
-//     user: 'ameer mzori',
-//     title: 'story about me',
-//     story: 'hi im ameer mzori',
-//   },
-//   {
-//     user: 'ameer',
-//     title: 'about my brother',
-//     story: 'hi im ameer and my brother called atro or ameen',
-//   },
-// ]
-
 export const homePage = (req, res) => {
   res.send('Hello World! Articles')
 }
@@ -36,17 +17,6 @@ export const ArticlesPage = (req, res) => {
 
 export const createArticle = (req, res) => {
   const { user, title, story } = req.body
-
-  // normal way to save data in self
-  // const newArticle = {
-  //   id: Math.random().toString(26).slice(2),
-  //   user,
-  //   title,
-  //   story,
-  // }
-  // articlesData.push(newArticle)
-  // console.log('our new article:', newArticle)
-  // console.log('our  articles:', articlesData)
 
   // mongo db save
   const newArticle = new article({
@@ -82,6 +52,38 @@ export const removeArticle = async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' })
   }
 }
+
+//  old way
+
+// let articlesData = [
+//   {
+//     user: 'ameer',
+//     title: 'there was a man...',
+//     story:
+//       'there was a man called ameer, he wanted to become a full stack developer',
+//   },
+//   {
+//     user: 'ameer mzori',
+//     title: 'story about me',
+//     story: 'hi im ameer mzori',
+//   },
+//   {
+//     user: 'ameer',
+//     title: 'about my brother',
+//     story: 'hi im ameer and my brother called atro or ameen',
+//   },
+// ]
+
+// normal way to save data in self
+// const newArticle = {
+//   id: Math.random().toString(26).slice(2),
+//   user,
+//   title,
+//   story,
+// }
+// articlesData.push(newArticle)
+// console.log('our new article:', newArticle)
+// console.log('our  articles:', articlesData)
 
 // old way of deleteing items
 // export const removeArticle = (req, res) => {
