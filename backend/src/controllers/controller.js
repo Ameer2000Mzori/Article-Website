@@ -29,7 +29,7 @@ export const createArticle = (req, res) => {
   const { user, title, story } = req.body
 
   const newArticle = {
-    user,
+    id: user,
     title,
     story,
   }
@@ -40,5 +40,9 @@ export const createArticle = (req, res) => {
 }
 
 export const removeArticle = (req, res) => {
-  res.send('Hello World!')
+  const { id } = req.params
+
+  articlesData = articlesData.filter((article) => article.id !== id)
+
+  res.status(200).json(articlesData)
 }
