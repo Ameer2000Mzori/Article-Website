@@ -48,7 +48,6 @@ export const removeArticle = (req, res) => {
   if (articleExisit) {
     articlesData = articlesData.filter((article) => article.id !== id)
     res.status(200).json(articlesData)
-    res.status(200).json({ message: `video with id ${id} removed` })
   } else {
     res.status(404).json({ message: `video with id ${id} does not exist` })
   }
