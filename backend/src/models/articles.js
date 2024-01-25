@@ -21,4 +21,4 @@ const articleSchema = new Schema(
 
 const article = mongoose.model('article', articleSchema)
 
-export default { article }
+export { article }
