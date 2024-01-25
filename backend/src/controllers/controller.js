@@ -66,7 +66,11 @@ export const removeArticle = async (req, res) => {
   const { id } = req.params
 
   try {
-    const result = await Article.deleteOne({ _id: id })
+    console.log('Attempting to delete article with ID:', id)
+
+    const result = await article.deleteOne({ _id: id })
+
+    console.log('Deletion result:', result)
 
     if (result.deletedCount > 0) {
       res.status(200).json({ message: 'Article deleted successfully' })
