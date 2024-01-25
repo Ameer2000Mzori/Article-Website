@@ -45,6 +45,10 @@ export const createArticle = (req, res) => {
   //   story,
   // }
 
+  // articlesData.push(newArticle)
+  // console.log('our new article:', newArticle)
+  // console.log('our  articles:', articlesData)
+
   // mongo db save
   const newArticle = new article({
     id: Math.random().toString(26).slice(2),
@@ -56,10 +60,6 @@ export const createArticle = (req, res) => {
   newArticle.save().then((result) => {
     res.status(200).json(result)
   })
-
-  articlesData.push(newArticle)
-  console.log('our new article:', newArticle)
-  console.log('our  articles:', articlesData)
 }
 
 export const removeArticle = (req, res) => {
