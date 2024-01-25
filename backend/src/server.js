@@ -3,6 +3,7 @@ import express from 'express'
 import 'dotenv/config'
 import router from './routes/router.js'
 import morgan from 'morgan'
+import mongoConnect from './database/db.js'
 
 // starting and creating running and using data
 
@@ -14,6 +15,8 @@ app.use(router)
 const PORT = process.env.PORT || 3000
 
 // server setup
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`)
+mongoConnect(() => {
+  app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`)
+  })
 })
