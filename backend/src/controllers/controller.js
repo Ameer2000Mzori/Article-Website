@@ -1,4 +1,4 @@
-const articlesData = [
+let articlesData = [
   {
     user: 'ameer',
     title: 'there was a man...',
@@ -29,7 +29,8 @@ export const createArticle = (req, res) => {
   const { user, title, story } = req.body
 
   const newArticle = {
-    id: user,
+    id: Math.random().toString(26).slice(2),
+    user,
     title,
     story,
   }
@@ -42,7 +43,13 @@ export const createArticle = (req, res) => {
 export const removeArticle = (req, res) => {
   const { id } = req.params
 
-  articlesData = articlesData.filter((article) => article.id !== id)
+  const articleExisit = articlesData.some((article) => article.id === id)
 
-  res.status(200).json(articlesData)
+  if (articleExisit) {
+    articlesData = articlesData.filter((article) => article.id !== id)
+    res.status(200).json(articlesData)
+    res.status(200).json({ message: `video with id ${id} removed` })
+  } else {
+    res.status(404).json({ message: `video with id ${id} does not exist` })
+  }
 }
