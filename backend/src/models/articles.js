@@ -1,4 +1,3 @@
-import { Timestamp } from 'mongodb'
 import mongoose, { Schema } from 'mongoose'
 
 const articleSchema = new Schema(
@@ -16,7 +15,7 @@ const articleSchema = new Schema(
       required: true,
     },
   },
-  { Timestamp: true }
+  { timestamps: true } // Corrected option name
 )
 
 const article = mongoose.model('article', articleSchema)

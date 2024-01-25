@@ -44,7 +44,6 @@ export const createArticle = (req, res) => {
   //   title,
   //   story,
   // }
-
   // articlesData.push(newArticle)
   // console.log('our new article:', newArticle)
   // console.log('our  articles:', articlesData)
@@ -62,15 +61,34 @@ export const createArticle = (req, res) => {
   })
 }
 
-export const removeArticle = (req, res) => {
+// deleteing items with mango db
+export const removeArticle = async (req, res) => {
   const { id } = req.params
 
-  const articleExisit = articlesData.some((article) => article.id === id)
+  try {
+    const result = await Article.deleteOne({ _id: id })
 
-  if (articleExisit) {
-    articlesData = articlesData.filter((article) => article.id !== id)
-    res.status(200).json(articlesData)
-  } else {
-    res.status(404).json({ message: `video with id ${id} does not exist` })
+    if (result.deletedCount > 0) {
+      res.status(200).json({ message: 'Article deleted successfully' })
+    } else {
+      res.status(404).json({ message: `Article with id ${id} not found` })
+    }
+  } catch (error) {
+    console.error('Error deleting article:', error)
+    res.status(500).json({ message: 'Internal Server Error' })
   }
 }
+
+// old way of deleteing items
+// export const removeArticle = (req, res) => {
+//   const { id } = req.params
+
+//   const articleExisit = articlesData.some((article) => article.id === id)
+
+//   if (articleExisit) {
+//     articlesData = article.find((article) => article.id !== id)
+//     res.status(200).json(articlesData)
+//   } else {
+//     res.status(404).json({ message: `video with id ${id} does not exist` })
+//   }
+// }
