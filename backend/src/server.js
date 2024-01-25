@@ -7,9 +7,9 @@ import morgan from 'morgan'
 // starting and creating running and using data
 
 const app = express()
+app.use(morgan('dev'))
 app.use(express.json())
 app.use(router)
-app.use(morgan('dev'))
 
 const PORT = process.env.PORT || 3000
 
