@@ -37,12 +37,25 @@ export const ArticlesPage = (req, res) => {
 export const createArticle = (req, res) => {
   const { user, title, story } = req.body
 
-  const newArticle = {
+  // normal way to save data in self
+  // const newArticle = {
+  //   id: Math.random().toString(26).slice(2),
+  //   user,
+  //   title,
+  //   story,
+  // }
+
+  // mongo db save
+  const newArticle = new article({
     id: Math.random().toString(26).slice(2),
     user,
     title,
     story,
-  }
+  })
+
+  newArticle.save().then((result) => {
+    res.status(200).json(result)
+  })
 
   articlesData.push(newArticle)
   console.log('our new article:', newArticle)
