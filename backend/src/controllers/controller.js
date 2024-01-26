@@ -26,9 +26,7 @@ export const createArticle = (req, res) => {
     story,
   })
 
-  newArticle.save().then((result) => {
-    res.status(200).json(result)
-  })
+  newArticle.save().then((result) => res.status(200).json(result))
 }
 
 // deleteing items with mango db
